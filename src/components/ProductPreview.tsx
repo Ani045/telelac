@@ -30,7 +30,7 @@ const ProductPreview = () => {
             icon: Factory,
             sectorIndex: 0,
             color: "#FF5733",
-            image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "Metals.png"
         },
         {
             id: "petrochemicals",
@@ -38,7 +38,7 @@ const ProductPreview = () => {
             icon: Flame,
             sectorIndex: 1,
             color: "#FF8C00",
-            image: "https://images.unsplash.com/photo-1581092918484-8313bbc2c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "PETROCHEMICALS.png"
         },
         {
             id: "power",
@@ -46,7 +46,7 @@ const ProductPreview = () => {
             icon: Zap,
             sectorIndex: 2,
             color: "#FFD700",
-            image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "POWER.png"
         },
         {
             id: "chemicals",
@@ -54,7 +54,7 @@ const ProductPreview = () => {
             icon: FlaskConical,
             sectorIndex: 3,
             color: "#32CD32",
-            image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "CHEMICALS.png"
         },
         {
             id: "oil-gas",
@@ -62,7 +62,7 @@ const ProductPreview = () => {
             icon: Droplets,
             sectorIndex: 4,
             color: "#1E90FF",
-            image: "https://images.unsplash.com/photo-1613123432717-e1cd14e5e7e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "Oil & Gas.png"
         },
         {
             id: "pharmaceuticals",
@@ -70,7 +70,7 @@ const ProductPreview = () => {
             icon: Cpu,
             sectorIndex: 5,
             color: "#8A2BE2",
-            image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "PHARMACEUTICALS.png"
         },
         {
             id: "new-industries",
@@ -78,7 +78,7 @@ const ProductPreview = () => {
             icon: Settings,
             sectorIndex: 6,
             color: "#FF1493",
-            image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "NEW-INDUSTRIES.png"
         },
         {
             id: "oem-epc",
@@ -86,7 +86,7 @@ const ProductPreview = () => {
             icon: Building2,
             sectorIndex: 7,
             color: "#DC143C",
-            image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "OEM & EPC.png"
         },
         {
             id: "industrial-gases",
@@ -94,7 +94,7 @@ const ProductPreview = () => {
             icon: Wind,
             sectorIndex: 8,
             color: "#20B2AA",
-            image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "Oil &gas.png"
         },
         {
             id: "water-treatment",
@@ -102,7 +102,7 @@ const ProductPreview = () => {
             icon: Droplets,
             sectorIndex: 9,
             color: "#708090",
-            image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=90"
+            image: "Water-treatment.png"
         }
     ];
 
@@ -138,7 +138,7 @@ const ProductPreview = () => {
     const getLabelPosition = (index, centerX, centerY, radius) => {
         const anglePerSector = 360 / industries.length;
         const angle = (index * anglePerSector) + (anglePerSector / 2);
-        const labelRadius = radius + 120; // Increased from 80 to 120 for better visibility
+        const labelRadius = radius + 120;
         return polarToCartesian(centerX, centerY, labelRadius, angle);
     };
 
@@ -283,7 +283,7 @@ const ProductPreview = () => {
             return allProducts;
         }
         return allProducts.filter(product => product.industry === selectedIndustry);
-    }, [selectedIndustry, allProducts]);
+    }, [selectedIndustry]);
 
     const handleSectorClick = (industry) => {
         setSelectedIndustry(industry.id);
@@ -291,13 +291,6 @@ const ProductPreview = () => {
 
     return (
         <div className="relative bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 min-h-screen w-full">
-            {/* Background Pattern */}
-            {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-300px] left-[-300px] w-96 h-96 bg-orange-400 rounded-full opacity-[0.02] filter blur-3xl"></div>
-                <div className="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-blue-400 rounded-full opacity-[0.02] filter blur-3xl"></div>
-                <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-400 rounded-full opacity-[0.015] filter blur-3xl"></div>
-            </div> */}
-
             {/* Full Width Container with extra padding for labels */}
             <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 relative z-10">
                 
@@ -315,51 +308,56 @@ const ProductPreview = () => {
                         </p>
                     </div>
 
-                    {/* Main Content - Removed background container */}
+                    {/* Main Content */}
                     <div className="p-4 sm:p-6 md:p-8 lg:p-12 mb-3 sm:mb-4 md:mb-6 lg:mb-8 mx-auto max-w-7xl overflow-visible">
                         <div className="flex flex-col lg:grid lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
                             
-                            {/* Interactive SVG Pie Chart - With improved label visibility */}
+                            {/* Interactive SVG Pie Chart */}
                             <div className="lg:col-span-3 flex justify-center items-center py-8 sm:py-12 md:py-16 lg:py-20">
-                                <div className="w-full max-w-[800px] aspect-square"> {/* Increased from 700px */}
+                                <div className="w-full max-w-[800px] aspect-square">
                                     
                                     <svg 
                                         width="100%" 
                                         height="100%" 
-                                        viewBox="0 0 800 800"  /* Increased from 700 700 */
+                                        viewBox="0 0 800 800"
                                         preserveAspectRatio="xMidYMid meet"
                                         className="overflow-visible"
                                     >
-                                        {/* Define patterns for images with proper scaling */}
+                                        {/* Define patterns for images */}
                                         <defs>
-                                            {industries.map((industry, index) => (
-                                                <pattern 
-                                                    key={`pattern-${index}`}
-                                                    id={`image-pattern-${index}`} 
-                                                    patternUnits="userSpaceOnUse" 
-                                                    x="0" 
-                                                    y="0" 
-                                                    width="800" 
-                                                    height="800"
-                                                >
-                                                    <image 
-                                                        href={industry.image} 
+                                            {industries.map((industry, index) => {
+                                                // Calculate sector center position for image placement
+                                                const anglePerSector = 360 / industries.length;
+                                                const angle = (index * anglePerSector) + (anglePerSector / 2);
+                                                const imageRadius = 160; // Distance from center to place image
+                                                const imagePos = polarToCartesian(400, 400, imageRadius, angle);
+                                                
+                                                return (
+                                                    <pattern 
+                                                        key={`pattern-${index}`}
+                                                        id={`image-pattern-${index}`} 
+                                                        patternUnits="userSpaceOnUse" 
                                                         x="0" 
                                                         y="0" 
                                                         width="800" 
-                                                        height="800" 
-                                                        preserveAspectRatio="xMidYMid slice"
-                                                    />
-                                                </pattern>
-                                            ))}
-                                            
-                                            {/* Define clip paths for precise sector shapes */}
-                                            {industries.map((industry, index) => {
-                                                const path = getSectorPath(index, 400, 400, 240); /* Updated center coordinates */
-                                                return (
-                                                    <clipPath key={`clip-${index}`} id={`sector-clip-${index}`}>
-                                                        <path d={path} />
-                                                    </clipPath>
+                                                        height="800"
+                                                    >
+                                                        {/* Background for sector */}
+                                                        <rect 
+                                                            width="800" 
+                                                            height="800" 
+                                                            fill={`${industry.color}20`}
+                                                        />
+                                                        {/* Centered image in sector */}
+                                                        <image 
+                                                            href={industry.image} 
+                                                            x={imagePos.x - 80} 
+                                                            y={imagePos.y - 80} 
+                                                            width="160" 
+                                                            height="160" 
+                                                            preserveAspectRatio="xMidYMid meet"
+                                                        />
+                                                    </pattern>
                                                 );
                                             })}
                                             
@@ -370,11 +368,11 @@ const ProductPreview = () => {
                                             </radialGradient>
                                         </defs>
                                         
-                                        {/* Pie sectors with fully visible images */}
+                                        {/* Pie sectors with images */}
                                         {industries.map((industry, index) => {
                                             const isSelected = selectedIndustry === industry.id;
-                                            const path = getSectorPath(index, 400, 400, 240); /* Updated center coordinates */
-                                            const labelPos = getLabelPosition(index, 400, 400, 240); /* Updated center coordinates */
+                                            const path = getSectorPath(index, 400, 400, 240);
+                                            const labelPos = getLabelPosition(index, 400, 400, 240);
                                             
                                             return (
                                                 <g key={industry.id}>
@@ -402,7 +400,7 @@ const ProductPreview = () => {
                                                         />
                                                     )}
                                                     
-                                                    {/* Industry labels positioned outside without background boxes */}
+                                                    {/* Industry labels */}
                                                     <g className="cursor-pointer" onClick={() => handleSectorClick(industry)}>
                                                         <text
                                                             x={labelPos.x}
@@ -459,7 +457,7 @@ const ProductPreview = () => {
                                 </div>
                             </div>
 
-                            {/* Products List - With background */}
+                            {/* Products List */}
                             <div className="lg:col-span-2 space-y-2 sm:space-y-3 md:space-y-4">
                                 <div className="sticky top-4 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
                                     <div className="text-left mb-2 sm:mb-3 md:mb-4">
@@ -542,10 +540,8 @@ const ProductPreview = () => {
                         </div>
                     </div>
 
-                    {/* Feature Highlights - Updated to match theme */}
+                    {/* Feature Highlights */}
                     <div className="bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 border border-orange-200/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 relative mx-auto max-w-7xl">
-                        {/* <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div> */}
-                        {/* <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-amber-200/20 to-transparent rounded-full transform -translate-x-12 translate-y-12"></div> */}
                         
                         <div className="text-center mb-4 sm:mb-6 relative z-10">
                             <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#2B2B2A] mb-1 sm:mb-2">
