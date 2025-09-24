@@ -12,6 +12,8 @@ import IndustriesPage from '@/pages/IndustriesPage';
 import ResourcesPage from '@/pages/ResourcesPage';
 import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
+import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
+import TermsConditionsPage from '@/pages/TermsConditionsPage';
 import NotFound from '@/pages/NotFound';
 import './App.css';
 
@@ -31,9 +33,12 @@ function App() {
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/products/:productId" element={<ProductDetailPage />} />
                 <Route path="/industries" element={<IndustriesPage />} />
+                <Route path="/industries/:industry/products" element={<ProductsPage />} />
                 <Route path="/resources" element={<ResourcesPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/terms" element={<TermsConditionsPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

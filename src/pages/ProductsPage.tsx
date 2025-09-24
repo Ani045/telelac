@@ -1,11 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Zap, Wind, Wrench, Settings, Thermometer, Cpu } from 'lucide-react';
+import { ArrowRight, Zap, Wind, Wrench, Settings, Thermometer, Cpu, ChevronRight } from 'lucide-react';
 
 const ProductsPage = () => {
+  const { industry } = useParams();
+  
+  // Industry mapping for filtering products
+  const industryApplicationMap = {
+    'metals': ['Metal Processing', 'Metal Forging', 'Steel Processing', 'Electroplating', 'Anodizing', 'Chemical Treatment'],
+    'petrochemicals': ['Petrochemicals', 'Refinery Process', 'Chemical Processing', 'Catalyst Heating'],
+    'power': ['Power Generation', 'Boiler Heating', 'Steam Generation', 'Turbine Heating', 'Nuclear Facility'],
+    'chemicals': ['Chemical Processing', 'Chemical Plants', 'Manufacturing', 'Chemical Reactor', 'Distillation'],
+    'oil-gas': ['Oil & Gas', 'Oil Heating', 'Gas Heating', 'Pipeline Heating', 'Offshore Platform'],
+    'pharmaceuticals': ['Pharmaceutical Processing', 'Vaccine Production', 'Clean Room', 'Sterilization'],
+    'new-industries': ['Smart Heaters', 'IoT', 'Renewable Energy', 'Advanced Control', 'Automation'],
+    'oem-epc': ['Custom Design', 'Modular Systems', 'Turnkey Solutions', 'Engineering Design'],
+    'industrial-gases': ['Industrial Gases', 'Compressed Air Systems', 'Gas Heating', 'Industrial Drying', 'Nitrogen', 'Oxygen'],
+    'water-treatment': ['Water Treatment', 'Water Heating', 'Chemical Tanks', 'Wastewater', 'Desalination'],
+    'food-processing': ['Food Processing', 'Food & Beverage', 'Pasteurization', 'Cooking Equipment', 'Steam Generation']
+  };
+
+  const industryTitles = {
+    'metals': 'Metals',
+    'petrochemicals': 'Petrochemicals',
+    'power': 'Power Generation',
+    'chemicals': 'Chemicals',
+    'oil-gas': 'Oil & Gas',
+    'pharmaceuticals': 'Pharmaceuticals',
+    'new-industries': 'New Industries',
+    'oem-epc': 'OEM & EPC',
+    'industrial-gases': 'Industrial Gases',
+    'water-treatment': 'Water Treatment',
+    'food-processing': 'Food Processing'
+  };
+
   const products = [
   {
     id: 'heater-bundles',
@@ -68,19 +99,65 @@ const ProductsPage = () => {
     applications: ['Process Control', 'Temperature Monitoring', 'Safety Systems', 'Automation']
   }];
 
+  // Filter products based on industry
+  const filteredProducts = useMemo(() => {
+    if (!industry) {
+      return products;
+    }
+    
+    const industryApps = industryApplicationMap[industry];
+    if (!industryApps) {
+      return products;
+    }
+    
+    return products.filter(product => 
+      product.applications.some(app => 
+        industryApps.some(industryApp => 
+          app.toLowerCase().includes(industryApp.toLowerCase()) || 
+          industryApp.toLowerCase().includes(app.toLowerCase())
+        )
+      )
+    );
+  }, [industry]);
+
+  const pageTitle = industry ? `${industryTitles[industry]} Products` : 'Our Products';
+  const pageDescription = industry 
+    ? `Specialized heating solutions for ${industryTitles[industry]} applications`
+    : 'Comprehensive range of industrial electric heating solutions engineered for reliability, efficiency, and performance';
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <section className="bg-[#2B2B2A] text-white py-16">
         <div className="container mx-auto px-4">
+          {/* Breadcrumbs for industry-specific pages */}
+          {industry && (
+            <nav className="mb-8">
+              <div className="flex items-center space-x-2 text-sm text-gray-300">
+                <Link to="/" className="hover:text-[#F0801C] transition-colors duration-200">Home</Link>
+                <ChevronRight className="w-4 h-4" />
+                <Link to="/industries" className="hover:text-[#F0801C] transition-colors duration-200">Industries</Link>
+                <ChevronRight className="w-4 h-4" />
+                <span className="text-white font-medium">{industryTitles[industry]} Products</span>
+              </div>
+            </nav>
+          )}
+          
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Our Products
+              {pageTitle}
             </h1>
             <p className="text-xl text-gray-300">
-              Comprehensive range of industrial electric heating solutions engineered for reliability, efficiency, and performance
+              {pageDescription}
             </p>
+            
+            {industry && (
+              <div className="mt-6">
+                <Badge className="bg-[#F0801C] hover:bg-[#D6701A] text-white px-4 py-2">
+                  {industryTitles[industry]} Specialized
+                </Badge>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -89,7 +166,7 @@ const ProductsPage = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {products.map((product) =>
+            {filteredProducts.map((product) =>
             <Card key={product.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="relative">
                   <img
