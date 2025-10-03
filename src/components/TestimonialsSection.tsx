@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Quote, Award, MessageCircle, Users, ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote, Award, MessageCircle, Users, ChevronLeft, ChevronRight, Building } from "lucide-react";
 
 const TestimonialsSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,7 +15,6 @@ const TestimonialsSection = () => {
             company: "INOX India Limited",
             content:
                 "Telelec has been our trusted partner for over 15 years. Their heating solutions have consistently delivered reliable performance in our chemical processing operations.",
-            rating: 5,
             industry: "Chemical Processing",
             image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
             projects: "25+",
@@ -27,7 +26,6 @@ const TestimonialsSection = () => {
             company: "Hindalco Industries",
             content:
                 "The custom heating bundles provided by Telelec have significantly improved our process efficiency. Their technical expertise and after-sales service are exceptional.",
-            rating: 5,
             industry: "Metals & Mining",
             image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
             projects: "18+",
@@ -39,7 +37,6 @@ const TestimonialsSection = () => {
             company: "SRF Limited",
             content:
                 "We have implemented multiple Telelec heating systems across our facilities. The quality and durability of their products is unmatched in the industry.",
-            rating: 5,
             industry: "Textiles",
             image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
             projects: "30+",
@@ -120,11 +117,11 @@ const TestimonialsSection = () => {
                     </p>
                 </div>
 
-                {/* Trust Metrics */}
+                {/* Trust Metrics - Updated for B2B focus */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                     {[
-                        { icon: Star, value: "4.9/5", label: "Average Rating" },
-                        { icon: Users, value: "100+", label: "Happy Clients" },
+                        { icon: Building, value: "100+", label: "Enterprise Clients" },
+                        { icon: Users, value: "500+", label: "Projects Delivered" },
                         {
                             icon: Award,
                             value: "98%",
@@ -176,16 +173,8 @@ const TestimonialsSection = () => {
                                             </div>
 
                                             <CardContent className="p-6">
-                                                {/* Rating */}
-                                                <div className="flex items-center justify-between mb-4">
-                                                    <div className="flex items-center space-x-1">
-                                                        {[...Array(testimonial.rating)].map((_, i) => (
-                                                            <Star
-                                                                key={i}
-                                                                className="h-4 w-4 fill-[#F0801C] text-[#F0801C]"
-                                                            />
-                                                        ))}
-                                                    </div>
+                                                {/* Industry Badge - Moved to top */}
+                                                <div className="flex justify-end mb-4">
                                                     <Badge
                                                         variant="outline"
                                                         className="border-[#F0801C]/30 text-[#F0801C] text-xs font-semibold">
@@ -290,16 +279,8 @@ const TestimonialsSection = () => {
                                 </div>
 
                                 <CardContent className="p-8">
-                                    {/* Rating */}
-                                    <div className="flex items-center justify-between mb-6">
-                                        <div className="flex items-center space-x-1">
-                                            {[...Array(testimonial.rating)].map((_, i) => (
-                                                <Star
-                                                    key={i}
-                                                    className="h-5 w-5 fill-[#F0801C] text-[#F0801C]"
-                                                />
-                                            ))}
-                                        </div>
+                                    {/* Industry Badge - Moved to top */}
+                                    <div className="flex justify-end mb-6">
                                         <Badge
                                             variant="outline"
                                             className="border-[#F0801C]/30 text-[#F0801C] text-xs font-semibold"
@@ -361,7 +342,7 @@ const TestimonialsSection = () => {
                 )}
 
                 {/* Bottom CTA */}
-                <div className="mt-16 text-center">
+                {/* <div className="mt-16 text-center">
                     <div className="bg-gradient-to-r from-[#F0801C]/10 to-[#D6701A]/10 rounded-2xl p-8 border border-[#F0801C]/20 shadow">
                         <h3 className="text-2xl font-bold text-[#2B2B2A] mb-3">
                             Join Our Satisfied Clients
@@ -389,7 +370,7 @@ const TestimonialsSection = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );

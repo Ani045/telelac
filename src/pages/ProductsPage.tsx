@@ -1,276 +1,305 @@
-import React, { useMemo } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Zap, Wind, Wrench, Settings, Thermometer, Cpu, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { 
+  Zap, 
+  Wind, 
+  Wrench, 
+  Settings, 
+  Thermometer, 
+  Flame,
+  ChevronRight,
+  ArrowRight,
+  Factory,
+  CheckCircle,
+  Award,
+  Phone,
+  FileText,
+  Shield
+} from 'lucide-react';
 
 const ProductsPage = () => {
-  const { industry } = useParams();
-  
-  // Industry mapping for filtering products
-  const industryApplicationMap = {
-    'metals': ['Metal Processing', 'Metal Forging', 'Steel Processing', 'Electroplating', 'Anodizing', 'Chemical Treatment'],
-    'petrochemicals': ['Petrochemicals', 'Refinery Process', 'Chemical Processing', 'Catalyst Heating'],
-    'power': ['Power Generation', 'Boiler Heating', 'Steam Generation', 'Turbine Heating', 'Nuclear Facility'],
-    'chemicals': ['Chemical Processing', 'Chemical Plants', 'Manufacturing', 'Chemical Reactor', 'Distillation'],
-    'oil-gas': ['Oil & Gas', 'Oil Heating', 'Gas Heating', 'Pipeline Heating', 'Offshore Platform'],
-    'pharmaceuticals': ['Pharmaceutical Processing', 'Vaccine Production', 'Clean Room', 'Sterilization'],
-    'new-industries': ['Smart Heaters', 'IoT', 'Renewable Energy', 'Advanced Control', 'Automation'],
-    'oem-epc': ['Custom Design', 'Modular Systems', 'Turnkey Solutions', 'Engineering Design'],
-    'industrial-gases': ['Industrial Gases', 'Compressed Air Systems', 'Gas Heating', 'Industrial Drying', 'Nitrogen', 'Oxygen'],
-    'water-treatment': ['Water Treatment', 'Water Heating', 'Chemical Tanks', 'Wastewater', 'Desalination'],
-    'food-processing': ['Food Processing', 'Food & Beverage', 'Pasteurization', 'Cooking Equipment', 'Steam Generation']
-  };
-
-  const industryTitles = {
-    'metals': 'Metals',
-    'petrochemicals': 'Petrochemicals',
-    'power': 'Power Generation',
-    'chemicals': 'Chemicals',
-    'oil-gas': 'Oil & Gas',
-    'pharmaceuticals': 'Pharmaceuticals',
-    'new-industries': 'New Industries',
-    'oem-epc': 'OEM & EPC',
-    'industrial-gases': 'Industrial Gases',
-    'water-treatment': 'Water Treatment',
-    'food-processing': 'Food Processing'
-  };
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const products = [
-  {
-    id: 'heater-bundles',
-    title: 'Electric Heater Bundles',
-    subtitle: 'Inline Process Heaters',
-    description: 'Custom-designed electric heater bundles for industrial process heating applications. Features precise temperature control, robust construction, and energy-efficient operation.',
-    features: ['Custom Design', 'Temperature Control', 'Energy Efficient', 'Industrial Grade'],
-    icon: Zap,
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    applications: ['Chemical Processing', 'Oil & Gas', 'Petrochemicals', 'Food Processing']
-  },
-  {
-    id: 'air-heaters',
-    title: 'Air Heaters',
-    subtitle: 'Industrial Air Heating Solutions',
-    description: 'Comprehensive range of air heaters for compressed air, process air, and HVAC applications. Designed for reliability and energy efficiency in demanding industrial environments.',
-    features: ['High Efficiency', 'Corrosion Resistant', 'Temperature Control', 'Low Maintenance'],
-    icon: Wind,
-    image: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    applications: ['Compressed Air Systems', 'HVAC Applications', 'Industrial Drying', 'Gas Heating']
-  },
-  {
-    id: 'metal-finishing',
-    title: 'Metal Finishing Tank Heaters',
-    subtitle: 'Electroplating & Surface Treatment',
-    description: 'Specialized heating solutions for metal finishing processes including electroplating, anodizing, and chemical treatment tanks. Built to withstand harsh chemical environments.',
-    features: ['Chemical Resistant', 'Precision Heating', 'Durable Construction', 'Easy Installation'],
-    icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    applications: ['Electroplating', 'Anodizing', 'Chemical Treatment', 'Metal Processing']
-  },
-  {
-    id: 'process-heaters',
-    title: 'Process Heaters',
-    subtitle: 'Custom Engineering Solutions',
-    description: 'Engineered heating solutions for specific industrial processes. Custom-designed to meet unique requirements with advanced control systems and monitoring capabilities.',
-    features: ['Custom Engineering', 'Advanced Controls', 'Process Integration', 'Remote Monitoring'],
-    icon: Settings,
-    image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    applications: ['Chemical Plants', 'Manufacturing', 'Research Labs', 'Pilot Plants']
-  },
-  {
-    id: 'immersion-heaters',
-    title: 'Immersion Heaters',
-    subtitle: 'Direct Liquid Heating',
-    description: 'High-quality immersion heaters for direct heating of liquids in tanks, vessels, and process equipment. Available in various materials and configurations.',
-    features: ['Direct Heating', 'Multiple Materials', 'Custom Lengths', 'High Wattage'],
-    icon: Thermometer,
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    applications: ['Water Heating', 'Chemical Tanks', 'Oil Heating', 'Industrial Vessels']
-  },
-  {
-    id: 'control-panels',
-    title: 'Control Panels',
-    subtitle: 'Heating System Controls',
-    description: 'Advanced control panels and systems for heating equipment with temperature controllers, safety systems, and remote monitoring capabilities.',
-    features: ['Digital Controls', 'Safety Systems', 'Remote Access', 'Data Logging'],
-    icon: Cpu,
-    image: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    applications: ['Process Control', 'Temperature Monitoring', 'Safety Systems', 'Automation']
-  }];
-
-  // Filter products based on industry
-  const filteredProducts = useMemo(() => {
-    if (!industry) {
-      return products;
+    {
+      id: 1,
+      title: 'Electric Heater Bundles and Inline Process Heaters',
+      description: 'High-efficiency electric heater bundles designed for inline process heating applications across multiple industries.',
+      icon: Zap,
+      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      features: ['High Efficiency', 'Inline Installation', 'Process Heating', 'Multiple Configurations'],
+      industries: ['Power', 'Oil & Gas', 'Petrochemicals', 'Chemicals']
+    },
+    {
+      id: 2,
+      title: 'Air Heaters',
+      description: 'Industrial air heating systems for process air heating, space heating, and ventilation applications.',
+      icon: Wind,
+      image: 'https://images.unsplash.com/photo-1581092918607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      features: ['Energy Efficient', 'Multiple Sizes', 'Process Air Heating', 'Temperature Control'],
+      industries: ['Industrial Gases', 'Power', 'Manufacturing', 'HVAC']
+    },
+    {
+      id: 3,
+      title: 'Heaters for Metal Finishing Tanks',
+      description: 'Corrosion-resistant immersion heaters specifically designed for electroplating, anodizing, and metal finishing operations.',
+      icon: Wrench,
+      image: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      features: ['Corrosion Resistant', 'Chemical Compatible', 'Precise Control', 'Long Service Life'],
+      industries: ['Metals', 'Automotive', 'Electronics', 'Aerospace']
+    },
+    {
+      id: 4,
+      title: 'Heater Control Panels',
+      description: 'Advanced control systems for precise temperature management and monitoring of industrial heating equipment.',
+      icon: Settings,
+      image: 'https://images.unsplash.com/photo-1581092918319-b04e6a92bc5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      features: ['Digital Control', 'Remote Monitoring', 'Safety Features', 'Custom Configuration'],
+      industries: ['All Industries', 'Process Control', 'Automation', 'Safety Systems']
+    },
+    {
+      id: 5,
+      title: 'Customised Heating Equipment',
+      description: 'Engineered-to-order heating solutions designed to meet specific process requirements and operating conditions.',
+      icon: Thermometer,
+      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      features: ['Custom Design', 'Application Specific', 'Engineering Support', 'Turnkey Solutions'],
+      industries: ['OEM & EPC', 'New Industries', 'Special Projects', 'R&D']
+    },
+    {
+      id: 6,
+      title: 'Standard and Custom Heating Elements',
+      description: 'Comprehensive range of tubular, cartridge, and specialty heating elements for industrial applications.',
+      icon: Flame,
+      image: 'https://images.unsplash.com/photo-1581092918484-8313bbc2c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      features: ['Wide Range', 'Custom Specifications', 'High Quality', 'Fast Delivery'],
+      industries: ['Pharmaceuticals', 'Food Processing', 'Chemicals', 'Water Treatment']
     }
-    
-    const industryApps = industryApplicationMap[industry];
-    if (!industryApps) {
-      return products;
-    }
-    
-    return products.filter(product => 
-      product.applications.some(app => 
-        industryApps.some(industryApp => 
-          app.toLowerCase().includes(industryApp.toLowerCase()) || 
-          industryApp.toLowerCase().includes(app.toLowerCase())
-        )
-      )
-    );
-  }, [industry]);
+  ];
 
-  const pageTitle = industry ? `${industryTitles[industry]} Products` : 'Our Products';
-  const pageDescription = industry 
-    ? `Specialized heating solutions for ${industryTitles[industry]} applications`
-    : 'Comprehensive range of industrial electric heating solutions engineered for reliability, efficiency, and performance';
+  const categories = [
+    { id: 'all', name: 'All Products', icon: Factory },
+    { id: 'process', name: 'Process Heating', icon: Zap },
+    { id: 'control', name: 'Control Systems', icon: Settings },
+    { id: 'custom', name: 'Custom Solutions', icon: Thermometer }
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-[#2B2B2A] text-white py-16">
-        <div className="container mx-auto px-4">
-          {/* Breadcrumbs for industry-specific pages */}
-          {industry && (
-            <nav className="mb-8">
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
-                <Link to="/" className="hover:text-[#F0801C] transition-colors duration-200">Home</Link>
-                <ChevronRight className="w-4 h-4" />
-                <Link to="/industries" className="hover:text-[#F0801C] transition-colors duration-200">Industries</Link>
-                <ChevronRight className="w-4 h-4" />
-                <span className="text-white font-medium">{industryTitles[industry]} Products</span>
-              </div>
-            </nav>
-          )}
-          
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              {pageTitle}
-            </h1>
-            <p className="text-xl text-gray-300">
-              {pageDescription}
-            </p>
-            
-            {industry && (
-              <div className="mt-6">
-                <Badge className="bg-[#F0801C] hover:bg-[#D6701A] text-white px-4 py-2">
-                  {industryTitles[industry]} Specialized
+    <div className="min-h-screen bg-white">
+      {/* Banner-Style Hero Section */}
+      <section className="relative bg-slate-900 text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Industrial Products"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/85 to-slate-900/70"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 py-16 lg:py-20">
+          {/* Breadcrumb */}
+          <nav className="mb-8">
+            <div className="flex items-center space-x-2 text-sm text-slate-300">
+              <a href="/" className="hover:text-[#F0801C] transition-colors duration-200">Home</a>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-white font-medium">Products</span>
+            </div>
+          </nav>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="space-y-6">
+                <Badge className="bg-[#F0801C]/20 text-[#F0801C] border-[#F0801C]/30 px-4 py-2 mb-4 backdrop-blur-sm">
+                  <Award className="w-4 h-4 mr-2" />
+                  Since 1971
                 </Badge>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+                  Industrial
+                  <span className="block text-[#F0801C] mt-2">
+                    Heating Products
+                  </span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
+                  Telelec is a leading manufacturer of industrial heaters, delivering reliable heating solutions across all industries worldwide.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                  <button className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <Phone className="w-5 h-5" />
+                    Request Quote
+                  </button>
+                  <button className="border-2 border-white/30 hover:border-[#F0801C] text-white hover:text-[#F0801C] hover:bg-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 backdrop-blur-sm">
+                    <FileText className="w-5 h-5" />
+                    Download Catalog
+                  </button>
+                </div>
               </div>
-            )}
+
+              {/* Right Content - Key Benefits */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20">
+                  <Shield className="w-8 h-8 text-[#F0801C] mb-3" />
+                  <h3 className="text-lg font-bold text-white mb-1">Certified Quality</h3>
+                  <p className="text-slate-300 text-sm">IS 4159 & ASME compliant</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20">
+                  <Factory className="w-8 h-8 text-[#F0801C] mb-3" />
+                  <h3 className="text-lg font-bold text-white mb-1">All Industries</h3>
+                  <p className="text-slate-300 text-sm">Universal applications</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20">
+                  <Settings className="w-8 h-8 text-[#F0801C] mb-3" />
+                  <h3 className="text-lg font-bold text-white mb-1">Custom Design</h3>
+                  <p className="text-slate-300 text-sm">Tailored solutions</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20">
+                  <Award className="w-8 h-8 text-[#F0801C] mb-3" />
+                  <h3 className="text-lg font-bold text-white mb-1">50+ Years</h3>
+                  <p className="text-slate-300 text-sm">Proven expertise</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredProducts.map((product) =>
-            <Card key={product.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="relative">
-                  <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+      {/* Products Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                Our Product Range
+              </h2>
+              <div className="w-24 h-1 bg-[#F0801C] rounded-full mx-auto mb-6"></div>
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                Comprehensive heating solutions designed for industrial excellence
+              </p>
+            </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <product.icon className="h-10 w-10 text-[#F0801C]" />
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-[#F0801C] hover:bg-[#D6701A]">
-                      Industrial Grade
-                    </Badge>
+            {/* Products Grid - 2 columns for better B2B presentation */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {products.map((product, index) => (
+                <div 
+                  key={index}
+                  className="group bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                    {/* Image Section - 2/5 */}
+                    <div className="md:col-span-2 relative h-64 md:h-auto overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-[#F0801C] to-[#D6701A] rounded-xl flex items-center justify-center shadow-lg">
+                          <product.icon className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content Section - 3/5 */}
+                    <div className="md:col-span-3 p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#F0801C] transition-colors duration-300">
+                          {product.title}
+                        </h3>
+                        <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                          {product.description}
+                        </p>
+
+                        {/* Features */}
+                        <div className="mb-4">
+                          <h4 className="text-xs font-semibold text-slate-800 mb-2 uppercase tracking-wide">Key Features:</h4>
+                          <div className="grid grid-cols-2 gap-2">
+                            {product.features.map((feature, idx) => (
+                              <div key={idx} className="flex items-center gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                                <span className="text-xs text-slate-700">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Industries */}
+                        <div className="mb-4">
+                          <h4 className="text-xs font-semibold text-slate-800 mb-2 uppercase tracking-wide">Suitable For:</h4>
+                          <div className="flex flex-wrap gap-1.5">
+                            {product.industries.slice(0, 3).map((industry, idx) => (
+                              <span key={idx} className="inline-block bg-[#F0801C]/10 text-[#F0801C] text-xs px-2.5 py-1 rounded-full font-medium">
+                                {industry}
+                              </span>
+                            ))}
+                            {product.industries.length > 3 && (
+                              <span className="inline-block bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-full font-medium">
+                                +{product.industries.length - 3}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* CTA Buttons */}
+                      <div className="flex gap-3 mt-4">
+                        <button className="flex-1 bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white py-2.5 px-4 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg">
+                          Get Quote
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                        {product.id === 2 ? (
+                          <Link to="/products/air-heaters" className="border-2 border-slate-300 hover:border-[#F0801C] text-slate-700 hover:text-[#F0801C] py-2.5 px-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center">
+                            Details
+                          </Link>
+                        ) : (
+                          <button className="border-2 border-slate-300 hover:border-[#F0801C] text-slate-700 hover:text-[#F0801C] py-2.5 px-4 rounded-lg font-semibold text-sm transition-all duration-300">
+                            Details
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl text-[#2B2B2A] mb-1">
-                        {product.title}
-                      </CardTitle>
-                      <p className="text-[#F0801C] font-medium">{product.subtitle}</p>
-                    </div>
-                  </div>
-                </CardHeader>
-
-                <CardContent>
-                  <p className="text-[#C6C7C7] mb-4">
-                    {product.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-[#2B2B2A] mb-2">Key Features:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature, index) =>
-                    <Badge key={index} variant="outline" className="text-xs">
-                          {feature}
-                        </Badge>
-                    )}
-                    </div>
-                  </div>
-
-                  {/* Applications */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-[#2B2B2A] mb-2">Applications:</h4>
-                    <div className="grid grid-cols-2 gap-1 text-sm text-[#C6C7C7]">
-                      {product.applications.map((app, index) =>
-                    <div key={index}>• {app}</div>
-                    )}
-                    </div>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <Button
-                    asChild
-                    className="bg-[#F0801C] hover:bg-[#D6701A] text-white flex-1">
-
-                      <Link to={`/products/${product.id}`}>
-                        View Details
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                    <Button
-                    asChild
-                    variant="outline"
-                    className="border-[#F0801C] text-[#F0801C] hover:bg-[#F0801C] hover:text-white">
-
-                      <Link to="/contact">Get Quote</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#F0801C] text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Need a Custom Solution?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our engineering team can design and manufacture custom heating solutions tailored to your specific requirements
-          </p>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-[#F0801C] px-8">
-
-            <Link to="/contact">
-              Discuss Your Requirements
-            </Link>
-          </Button>
+      <section className="relative bg-gradient-to-r from-[#F0801C] to-[#D6701A] text-white py-12">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-3">
+              Need Help Selecting the Right Product?
+            </h2>
+            <p className="text-lg mb-6 text-white/90">
+              Our technical team can recommend the ideal heating solution for your application
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-[#F0801C] hover:bg-slate-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                <Phone className="w-5 h-5" />
+                Contact Technical Team
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-[#F0801C] px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                <FileText className="w-5 h-5" />
+                Request Product Catalog
+              </button>
+            </div>
+          </div>
         </div>
       </section>
-    </div>);
-
+    </div>
+  );
 };
 
 export default ProductsPage;

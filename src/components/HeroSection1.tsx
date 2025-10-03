@@ -67,7 +67,7 @@ const HeroSection = () => {
   return (
     <section className="relative bg-[#2B2B2A] text-white overflow-hidden">
       {/* Slider Container */}
-      <div className="relative h-screen min-h-[600px]">
+      <div className="relative h-[500px] lg:h-[600px]">
         {/* Slides */}
         {slides.map((slide, index) => (
           <div
@@ -89,43 +89,43 @@ const HeroSection = () => {
             <div className="absolute top-20 left-0 w-96 h-96 bg-[#F0801C]/10 rounded-full blur-3xl"></div>
 
             {/* Content */}
-            <div className="relative container mx-auto px-6 lg:px-8 h-full flex items-center">
-              <div className="max-w-3xl space-y-6 lg:space-y-8">
+            <div className="relative container mx-auto px-4 h-full flex items-center">
+              <div className="max-w-2xl space-y-6">
                 {/* Badge */}
-                <Badge className="bg-[#F0801C]/20 text-[#F0801C] border-[#F0801C]/30 backdrop-blur-sm text-sm md:text-base px-5 py-2.5">
-                  <slide.badge.icon className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                <Badge className="bg-[#F0801C]/20 text-[#F0801C] border-[#F0801C]/30 backdrop-blur-sm text-sm px-4 py-2">
+                  <slide.badge.icon className="w-4 h-4 mr-2" />
                   {slide.badge.text}
                 </Badge>
 
                 {/* Title */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   {slide.title}
-                  <span className="block text-[#F0801C] mt-2 lg:mt-3">{slide.highlight}</span>
+                  <span className="block text-[#F0801C] mt-2">{slide.highlight}</span>
                 </h1>
 
                 {/* Description */}
-                <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                   {slide.description}
                 </p>
 
                 {/* Stats */}
-                <div className="flex flex-wrap gap-3 lg:gap-4">
+                <div className="flex flex-wrap gap-3">
                   {slide.stats.map((stat, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:px-5 lg:py-3"
+                      className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2"
                     >
                       <stat.icon className="h-5 w-5 text-green-400" />
-                      <span className="text-sm lg:text-base font-medium">{stat.text}</span>
+                      <span className="text-sm font-medium">{stat.text}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#C6601A] text-white px-8 py-6 text-base lg:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+                    className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#C6601A] text-white px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
                   >
                     Get a Quote
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -133,7 +133,7 @@ const HeroSection = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-white/30 text-white hover:bg-white hover:text-[#2B2B2A] px-8 py-6 text-base lg:text-lg backdrop-blur-sm"
+                    className="border-2 border-white/30 text-white hover:bg-white hover:text-[#2B2B2A] px-8 py-6 text-lg backdrop-blur-sm"
                   >
                     View Products
                   </Button>

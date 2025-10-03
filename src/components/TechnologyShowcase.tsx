@@ -42,7 +42,7 @@ const TechnologyShowcase = () => {
   { label: 'Control Accuracy', value: '±1°C' },
   { label: 'Response Time', value: '<30 seconds' }];
 
-
+ 
   return (
     <section className="py-14 bg-gradient-to-br from-white via-gray-50 to-white">
       <div className="container mx-auto px-4">

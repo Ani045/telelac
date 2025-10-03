@@ -10,12 +10,13 @@ import IndustriesPreview from '@/components/IndustriesPreview';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import AboutPreview from '@/components/AboutPreview';
 import CTASection from '@/components/CTASection';
+import HeroSection1 from '@/components/HeroSection1';
 
 const HomeNew = () => {
   return (
     <div className="min-h-screen">
-      <HeroSection />
-
+      {/* <HeroSection /> */}
+<HeroSection1></HeroSection1>
       <ClientCarousel />
        <AboutPreview />
       <ProductPreview />

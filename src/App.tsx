@@ -14,6 +14,7 @@ import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import TermsConditionsPage from '@/pages/TermsConditionsPage';
+import AirHeaterPage from '@/pages/AirHeaterPage';
 import NotFound from '@/pages/NotFound';
 import './App.css';
 
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/homenew" element={<HomeNew />} />
                 <Route path="/products" element={<ProductsPage />} />
+                <Route path="/products/air-heaters" element={<AirHeaterPage />} />
                 <Route path="/products/:productId" element={<ProductDetailPage />} />
                 <Route path="/industries" element={<IndustriesPage />} />
                 <Route path="/industries/:industry/products" element={<ProductsPage />} />
