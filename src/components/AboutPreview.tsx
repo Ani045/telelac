@@ -105,7 +105,7 @@ const AboutPreview = () => {
                       <Card className="overflow-hidden shadow-2xl">
                           <CardContent className="p-0 relative">
                               <img
-                                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                  src="/public/images/about-us.jpg"
                                   alt="Manufacturing facility"
                                   className="w-full h-80 object-cover"
                               />

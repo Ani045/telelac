@@ -15,6 +15,11 @@ import ContactPage from '@/pages/ContactPage';
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
 import TermsConditionsPage from '@/pages/TermsConditionsPage';
 import AirHeaterPage from '@/pages/AirHeaterPage';
+import ElectricHeaterBundlesPage from '@/pages/ElectricHeaterBundlesPage';
+import MetalFinishingTanksPage from '@/pages/MetalFinishingTanksPage';
+import HeaterControlPanelsPage from '@/pages/HeaterControlPanelsPage';
+import CustomisedHeatingEquipmentPage from '@/pages/CustomisedHeatingEquipmentPage';
+import HeatingElementsPage from '@/pages/HeatingElementsPage';
 import NotFound from '@/pages/NotFound';
 import './App.css';
 
@@ -33,6 +38,11 @@ function App() {
                 <Route path="/homenew" element={<HomeNew />} />
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/products/air-heaters" element={<AirHeaterPage />} />
+                <Route path="/products/electric-heater-bundles" element={<ElectricHeaterBundlesPage />} />
+                <Route path="/products/metal-finishing-tanks" element={<MetalFinishingTanksPage />} />
+                <Route path="/products/heater-control-panels" element={<HeaterControlPanelsPage />} />
+                <Route path="/products/customised-heating-equipment" element={<CustomisedHeatingEquipmentPage />} />
+                <Route path="/products/heating-elements" element={<HeatingElementsPage />} />
                 <Route path="/products/:productId" element={<ProductDetailPage />} />
                 <Route path="/industries" element={<IndustriesPage />} />
                 <Route path="/industries/:industry/products" element={<ProductsPage />} />

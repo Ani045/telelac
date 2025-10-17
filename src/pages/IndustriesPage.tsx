@@ -92,72 +92,78 @@ const IndustriesPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner-Style Hero Section - Same as About Page */}
-      <section className="relative bg-slate-900 text-white overflow-hidden">
-        {/* Background Image */}
+      {/* Hero Section - Same as Products Page */}
+      <section className="relative bg-gradient-to-br from-orange-50 via-white to-slate-50">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Industrial Heating"
+            alt="Industrial Industries"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/85 to-slate-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-orange-50/75"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 py-16 lg:py-24">
+        <div className="relative z-10 container mx-auto px-8 py-8">
           {/* Breadcrumb */}
-          <nav className="mb-8">
-            <div className="flex items-center space-x-2 text-sm text-slate-300">
+          <nav className="mb-4">
+            <div className="flex items-center space-x-2 text-sm text-slate-600">
               <a href="/" className="hover:text-[#F0801C] transition-colors duration-200">Home</a>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-white font-medium">Industries</span>
+              <span className="text-slate-900 font-medium">Industries</span>
             </div>
           </nav>
 
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left Content */}
-              <div className="space-y-6">
-                <div>
-                  <Badge className="bg-[#F0801C]/20 text-[#F0801C] border-[#F0801C]/30 px-4 py-2 mb-6 backdrop-blur-sm">
-                    <Factory className="w-4 h-4 mr-2" />
-                    Industries We Serve
-                  </Badge>
-                  
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                    Industry-Specific
-                    <span className="block text-[#F0801C] mt-2">
-                      Heating Solutions
-                    </span>
-                  </h1>
-                  
-                  <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-lg">
-                    Delivering specialized heating equipment tailored to meet the unique demands of diverse industrial sectors worldwide.
-                  </p>
-                </div>
+          <div className="max-w-8xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+              {/* Left Content - Compact */}
+              <div className="lg:col-span-2 space-y-3">
+                <Badge className="bg-[#F0801C]/10 text-[#F0801C] border-[#F0801C]/20 px-3 py-1">
+                  <Factory className="w-4 h-4 mr-1" />
+                  Industries We Serve
+                </Badge>
+                
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+                  Industry-Specific <span className="text-[#F0801C]">Heating Solutions</span>
+                </h1>
+                
+                <p className="text-sm md:text-base text-slate-600">
+                  Delivering specialized heating equipment tailored to meet the unique demands of diverse industrial sectors worldwide.
+                </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <div className="flex flex-col sm:flex-row gap-2 pt-2">
+                  <button className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white px-5 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-sm">
+                    <ArrowRight className="w-4 h-4" />
                     Explore Solutions
-                    <ArrowRight className="w-5 h-5" />
                   </button>
-                  <button className="border-2 border-white/30 hover:border-[#F0801C] text-white hover:text-[#F0801C] hover:bg-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 backdrop-blur-sm">
-                    <Users className="w-5 h-5" />
+                  <button className="border-2 border-slate-300 hover:border-[#F0801C] text-slate-700 hover:text-[#F0801C] px-5 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 text-sm">
+                    <Users className="w-4 h-4" />
                     Contact Sales
                   </button>
                 </div>
               </div>
 
-              {/* Right Content - Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-white/15 hover:shadow-lg transition-all duration-300">
-                    <stat.icon className="w-8 h-8 text-[#F0801C] mx-auto mb-3" />
-                    <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                    <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
-                  </div>
-                ))}
+              {/* Right - Compact Stats Grid */}
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Award className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[0].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[0].label}</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Factory className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[1].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[1].label}</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Globe className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[2].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[2].label}</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Zap className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[3].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[3].label}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -165,54 +171,54 @@ const IndustriesPage = () => {
       </section>
 
       {/* Compact Industries Grid Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+      <section className="py-6 sm:py-8 lg:py-12 bg-slate-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-8xl mx-auto">
+            <div className="text-center mb-4 sm:mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-3xl font-bold text-slate-900 mb-2 sm:mb-3">
                 Industries We Serve
               </h2>
-              <div className="w-24 h-1 bg-[#F0801C] rounded-full mx-auto mb-6"></div>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              <div className="w-16 sm:w-20 h-1 bg-[#F0801C] rounded-full mx-auto mb-3 sm:mb-4"></div>
+              <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto">
                 Browse our comprehensive range of industry-specific heating solutions
               </p>
             </div>
 
-            {/* Compact Industry Cards Grid - 3 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* More Compact Industry Cards Grid - Responsive */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
               {industries.map((industry, index) => (
                 <div 
                   key={index}
-                  className="group bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                  className="group bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
                 >
-                  {/* Compact Image */}
-                  <div className="relative h-40 overflow-hidden">
+                  {/* More Compact Image */}
+                  <div className="relative h-24 sm:h-28 lg:h-32 overflow-hidden">
                     <img
                       src={industry.image}
                       alt={industry.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-3 left-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-[#F0801C] to-[#D6701A] rounded-lg flex items-center justify-center shadow-lg">
-                        <industry.icon className="w-5 h-5 text-white" />
+                    <div className="absolute top-2 right-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-[#F0801C] to-[#D6701A] rounded-lg flex items-center justify-center shadow-lg">
+                        <industry.icon className="w-4 h-4 text-white" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Compact Content */}
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#F0801C] transition-colors duration-300">
+                  {/* More Compact Content */}
+                  <div className="p-2 sm:p-3 lg:p-4">
+                    <h3 className="text-xs sm:text-sm lg:text-base font-bold text-slate-900 mb-1 sm:mb-2 group-hover:text-[#F0801C] transition-colors duration-300 line-clamp-2">
                       {industry.title}
                     </h3>
-                    <p className="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">
+                    <p className="text-slate-600 text-xs mb-2 sm:mb-3 line-clamp-2 leading-relaxed hidden sm:block">
                       {industry.description}
                     </p>
 
-                    {/* View Products Link */}
-                    <div className="flex items-center text-[#F0801C] font-semibold text-sm group-hover:gap-2 transition-all duration-300">
+                    {/* Compact View Products Link */}
+                    <div className="flex items-center text-[#F0801C] font-semibold text-xs group-hover:gap-1 transition-all duration-300">
                       View Products
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-3 h-3 ml-0.5 sm:ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
                 </div>
@@ -223,26 +229,26 @@ const IndustriesPage = () => {
       </section>
 
       {/* Compact CTA Section */}
-      <section className="relative bg-gradient-to-r from-[#F0801C] to-[#D6701A] text-white py-12 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-[#F0801C] to-[#D6701A] text-white py-6 sm:py-8 lg:py-12 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-3">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">
               Need a Custom Solution for Your Industry?
             </h2>
-            <p className="text-lg mb-6 text-white/90 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base mb-4 sm:mb-6 text-white/90 max-w-2xl mx-auto">
               Our experts can help you find the perfect heating solution
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#F0801C] hover:bg-slate-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
+              <button className="bg-white text-[#F0801C] hover:bg-slate-100 px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm sm:text-base">
                 <Users className="w-5 h-5" />
                 Contact Our Experts
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-[#F0801C] px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-[#F0801C] px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
                 Download Brochure
               </button>
             </div>

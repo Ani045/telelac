@@ -6,56 +6,72 @@ const ClientCarousel = () => {
     const clients = [
         {
             name: "Client 1",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/2bbd4769-6f8a-43fd-85df-824a0f1bfe8a.png",
+            logo: "/public/clients/1.png",
         },
         {
             name: "Client 2",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/deba8214-c41d-4ecd-9bfc-27ea565ffa9c.png",
+            logo: "/public/clients/2.jpg",
         },
         {
             name: "Client 3",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/e6ffb77b-bb18-4386-8f08-85756ffec068.jpg",
+            logo: "/public/clients/3.png",
         },
         {
             name: "Client 4",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/b77d3f34-273c-44bd-a85e-89bf2a642099.png",
+            logo: "/public/clients/4.png",
         },
         {
             name: "Client 5",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/dd380043-c625-442a-84fc-33e74d6c7e3a.png",
+            logo: "/public/clients/5.png",
         },
         {
             name: "Client 6",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/a5611e56-5f5c-471e-a36b-0084d1d23a34.jpg",
+            logo: "/public/clients/7.png",
         },
         {
             name: "Client 7",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/940b6f82-dbae-4ea7-adde-1e9eeb45dedc.jpg",
+            logo: "/public/clients/8.png",
         },
         {
             name: "Client 8",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/4d2ef306-063a-4d1d-abab-066cd1ac80f1.png",
+            logo: "/public/clients/9.jpg",
         },
         {
             name: "Client 9",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/8d66f5e6-eb56-4920-8171-e0d5fff2bd78.jpg",
+            logo: "/public/clients/10.png",
         },
         {
             name: "Client 10",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/21ec679e-d7fb-4dd6-bdad-6f6c126392ba.png",
+            logo: "/public/clients/11.jpg",
         },
         {
             name: "Client 11",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/6a2e7041-7471-421d-afd8-ac19b1159709.png",
+            logo: "/public/clients/12.png",
         },
         {
             name: "Client 12",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/ba4746f9-70e8-4d80-8663-bd49f878c725.jpg",
+            logo: "/public/clients/13.png",
         },
         {
-            name: "Client 13",
-            logo: "https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/56109d81-c067-4b94-88ab-a830041061d5.png",
+            name: "Client 14",
+            logo: "/public/clients/14.png",
         },
+         {
+            name: "Client 15",
+            logo: "/public/clients/15.jpg",
+        },
+ {
+            name: "Client 13",
+            logo: "/public/clients/16.png",
+        }, {
+            name: "Client 1",
+            logo: "/public/clients/17.jpg",
+        },{
+            name: "Client 15",
+            logo: "/public/clients/18.jpg",
+        }
+
+
     ];
 
     // Duplicate clients for seamless infinite scroll

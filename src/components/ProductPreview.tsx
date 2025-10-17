@@ -33,7 +33,7 @@ const ProductPreview = () => {
             name: "CHEMICALS",
             icon: FlaskConical,
             color: "#32CD32",
-            image: "CHEMICALS.png",
+            image: "/public/images/chemicals.jpg",
             description: "Precision heating solutions for chemical processing and manufacturing applications."
         },
         {
@@ -41,7 +41,7 @@ const ProductPreview = () => {
             name: "INDUSTRIAL GASES",
             icon: Wind,
             color: "#20B2AA",
-            image: "Oil &gas.png",
+            image: "/public/images/chemical-industry/img301.jpg",
             description: "Specialized heating systems for industrial gas production and handling operations."
         },
         {
@@ -49,7 +49,7 @@ const ProductPreview = () => {
             name: "METALS",
             icon: Factory,
             color: "#FF5733",
-            image: "Metals.png",
+            image: "/public/images/metal-industry/img110.jpg",
             description: "Advanced heating solutions for metal processing, forging, and treatment applications with precise temperature control."
         },
         {
@@ -57,7 +57,7 @@ const ProductPreview = () => {
             name: "NEW INDUSTRIES",
             icon: Settings,
             color: "#FF1493",
-            image: "NEW-INDUSTRIES.png",
+            image: "/public/images/new-industries/img412.jpg",
             description: "Innovative heating technologies for emerging industrial applications and processes."
         },
         {
@@ -65,7 +65,7 @@ const ProductPreview = () => {
             name: "OEM & EPC",
             icon: Building2,
             color: "#DC143C",
-            image: "OEM & EPC.png",
+            image: "/public/images/oem-epc/img114.jpg",
             description: "Custom engineered heating solutions for OEMs and EPC contractors worldwide."
         },
         {
@@ -73,7 +73,7 @@ const ProductPreview = () => {
             name: "OIL & GAS",
             icon: Droplets,
             color: "#1E90FF",
-            image: "Oil & Gas.png",
+            image: "/public/images/oil-gas.jpg",
             description: "Heavy-duty heating equipment for oil and gas extraction and processing operations."
         },
         {
@@ -81,7 +81,7 @@ const ProductPreview = () => {
             name: "PETROCHEMICALS", 
             icon: Flame,
             color: "#FF8C00",
-            image: "PETROCHEMICALS.png",
+            image: "/public/images/petrochemical-industry/img265.jpg",
             description: "Specialized heating equipment for petrochemical processing and refining operations."
         },
         {
@@ -89,7 +89,7 @@ const ProductPreview = () => {
             name: "PHARMACEUTICALS",
             icon: Cpu,
             color: "#8A2BE2",
-            image: "PHARMACEUTICALS.png",
+            image: "/public/images/pharma-industry/img303.jpg",
             description: "Clean room compatible heating solutions for pharmaceutical manufacturing processes."
         },
         {
@@ -97,7 +97,7 @@ const ProductPreview = () => {
             name: "POWER",
             icon: Zap,
             color: "#FFD700",
-            image: "POWER.png",
+            image: "/public/images/power.jpg",
             description: "Reliable heating systems for power generation and electrical infrastructure applications."
         },
         {
@@ -105,7 +105,7 @@ const ProductPreview = () => {
             name: "WATER TREATMENT",
             icon: Droplets,
             color: "#708090",
-            image: "Water-treatment.png",
+            image: "/public/images/electric-heater.jpg",
             description: "Corrosion-resistant heating solutions for water treatment and purification processes."
         }
     ];

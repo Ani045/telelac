@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Download, FileText, BookOpen, Lightbulb, TrendingUp, Award } from 'lucide-react';
+import { Download, FileText, BookOpen, Lightbulb, TrendingUp, Award, ChevronRight, ArrowRight, Globe, Shield, MessageSquare, Factory } from 'lucide-react';
 
 const ResourcesPage = () => {
   const resources = [
@@ -131,16 +131,80 @@ const ResourcesPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <section className="bg-[#2B2B2A] text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Resources & Documentation
-            </h1>
-            <p className="text-xl text-gray-300">
-              Access comprehensive technical resources, case studies, and industry insights to make informed decisions about your heating solutions
-            </p>
+      {/* Hero Section - Same as Products Page */}
+      <section className="relative bg-gradient-to-br from-orange-50 via-white to-slate-50">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Resources & Documentation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-orange-50/75"></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 py-6 sm:py-8">
+          {/* Breadcrumb */}
+          <nav className="mb-4">
+            <div className="flex items-center space-x-2 text-sm text-slate-600">
+              <a href="/" className="hover:text-[#F0801C] transition-colors duration-200">Home</a>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-slate-900 font-medium">Resources</span>
+            </div>
+          </nav>
+
+          <div className="max-w-8xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+              {/* Left Content - Compact */}
+              <div className="lg:col-span-2 space-y-3">
+                <Badge className="bg-[#F0801C]/10 text-[#F0801C] border-[#F0801C]/20 px-3 py-1">
+                  <BookOpen className="w-4 h-4 mr-1" />
+                  Technical Resources
+                </Badge>
+                
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+                  Resources & <span className="text-[#F0801C]">Documentation</span>
+                </h1>
+                
+                <p className="text-sm md:text-base text-slate-600">
+                  Access comprehensive technical resources, case studies, and industry insights to make informed decisions about your heating solutions.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-2 pt-2">
+                  <button className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white px-5 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-sm">
+                    <Download className="w-4 h-4" />
+                    Download Resources
+                  </button>
+                  <button className="border-2 border-slate-300 hover:border-[#F0801C] text-slate-700 hover:text-[#F0801C] px-5 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 text-sm">
+                    <FileText className="w-4 h-4" />
+                    View Catalog
+                  </button>
+                </div>
+              </div>
+
+              {/* Right - Compact Stats Grid */}
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <FileText className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">50+</h3>
+                  <p className="text-xs text-slate-600">Documents</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <TrendingUp className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">25+</h3>
+                  <p className="text-xs text-slate-600">Case Studies</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Lightbulb className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">Latest</h3>
+                  <p className="text-xs text-slate-600">Insights</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Award className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">Expert</h3>
+                  <p className="text-xs text-slate-600">Support</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -180,89 +180,77 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Banner-Style Hero Section */}
-      <section className="relative bg-slate-900 text-white overflow-hidden">
-        {/* Background Image */}
+      {/* Hero Section - Same as Products Page */}
+      <section className="relative bg-gradient-to-br from-orange-50 via-white to-slate-50">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Industrial Heating"
+            alt="About Telelec"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/85 to-slate-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-orange-50/75"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 py-16 lg:py-24">
-          {/* Simple Breadcrumb */}
-          <nav className="mb-8">
-            <div className="flex items-center space-x-2 text-sm text-slate-300">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 py-6 sm:py-8">
+          {/* Breadcrumb */}
+          <nav className="mb-4">
+            <div className="flex items-center space-x-2 text-sm text-slate-600">
               <a href="/" className="hover:text-[#F0801C] transition-colors duration-200">Home</a>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-white font-medium">About Us</span>
+              <span className="text-slate-900 font-medium">About Us</span>
             </div>
           </nav>
 
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left Content */}
-              <div className="space-y-6">
-                <div>
-                  <Badge className="bg-[#F0801C]/20 text-[#F0801C] border-[#F0801C]/30 px-4 py-2 mb-6 backdrop-blur-sm">
-                    <Award className="w-4 h-4 mr-2" />
-                    Since 1971
-                  </Badge>
-                  
-                  <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                    About
-                    <span className="block text-[#F0801C] mt-2">
-                      Telelec
-                    </span>
-                  </h1>
-                  
-                  <p className="text-xl text-slate-300 leading-relaxed max-w-lg">
-                    For over five decades, we've been engineering reliable electric heating solutions that industries depend on worldwide.
-                  </p>
-                </div>
+          <div className="max-w-8xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+              {/* Left Content - Compact */}
+              <div className="lg:col-span-2 space-y-3">
+                <Badge className="bg-[#F0801C]/10 text-[#F0801C] border-[#F0801C]/20 px-3 py-1">
+                  <Award className="w-4 h-4 mr-1" />
+                  Since 1971
+                </Badge>
+                
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+                  About <span className="text-[#F0801C]">Telelec</span>
+                </h1>
+                
+                <p className="text-sm md:text-base text-slate-600">
+                  For over five decades, we've been engineering reliable electric heating solutions that industries depend on worldwide.
+                </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <div className="flex flex-col sm:flex-row gap-2 pt-2">
+                  <button className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#F0801C] text-white px-5 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-sm">
+                    <ArrowRight className="w-4 h-4" />
                     Our Story
-                    <ArrowRight className="w-5 h-5" />
                   </button>
-                  <button className="border-2 border-white/30 hover:border-[#F0801C] text-white hover:text-[#F0801C] hover:bg-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 backdrop-blur-sm">
-                    <Factory className="w-5 h-5" />
+                  <button className="border-2 border-slate-300 hover:border-[#F0801C] text-slate-700 hover:text-[#F0801C] px-5 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 text-sm">
+                    <Factory className="w-4 h-4" />
                     Our Capabilities
                   </button>
                 </div>
               </div>
 
-              {/* Right Content - Cards */}
-              <div className="space-y-6">
-                {/* Presidential Award */}
-                <div className="bg-white/10 backdrop-blur-md shadow-xl border border-white/20 rounded-2xl p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#F0801C] to-[#D6701A] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-white text-lg mb-1">Presidential Recognition</h3>
-                      <p className="text-slate-300 text-sm leading-relaxed mb-2">
-                        Entrepreneur's Award by Hon'ble President of India Shri Zail Singh to founder Mr. R.C. Aggarwal
-                      </p>
-                      <span className="inline-block bg-[#F0801C]/20 text-[#F0801C] px-3 py-1 rounded-full text-xs font-semibold border border-[#F0801C]/30">1985</span>
-                    </div>
-                  </div>
+              {/* Right - Compact Stats Grid */}
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Award className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[0].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[0].label}</p>
                 </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-4">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-white/15 hover:shadow-lg transition-all duration-300">
-                      <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                      <div className="text-slate-300 text-sm font-medium">{stat.label}</div>
-                    </div>
-                  ))}
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Globe className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[1].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[1].label}</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Factory className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[2].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[2].label}</p>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 shadow-sm text-center">
+                  <Shield className="w-6 h-6 text-[#F0801C] mx-auto mb-1" />
+                  <h3 className="text-sm font-bold text-slate-900">{stats[3].number}</h3>
+                  <p className="text-xs text-slate-600">{stats[3].label}</p>
                 </div>
               </div>
             </div>
