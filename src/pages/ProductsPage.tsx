@@ -28,7 +28,7 @@ const ProductsPage = () => {
       title: 'Electric Heater Bundles & Inline Process Heaters',
       description: 'High-performance electric heating solutions up to 1MW for extreme industrial conditions',
       icon: Zap,
-      image: '/public/images/air-heater.png',
+      image: '/electric-heater/6.png',
       features: ['Up to 1MW Power', '600°C Temperature', '300 bar Pressure', 'ASME Compliant'],
       industries: ['Power', 'Oil & Gas', 'Petrochemicals', 'Chemicals'],
       specs: ['1000kW', '600°C', '300bar'],
@@ -39,7 +39,7 @@ const ProductsPage = () => {
       title: 'Air Heaters',
       description: 'Industrial air heating systems with replaceable elements up to 400kW',
       icon: Wind,
-      image: '/public/images/air-heater.png',
+      image: '/air-heater/1.png',
       features: ['400kW Single Assembly', 'IP65 Protection', 'Replaceable Elements', 'Low Pressure Drop'],
       industries: ['Industrial Gases', 'Power', 'Manufacturing', 'HVAC'],
       specs: ['400kW', 'IP65', '6mm'],
@@ -50,7 +50,7 @@ const ProductsPage = () => {
       title: 'Heaters for Metal Finishing Tanks',
       description: 'Corrosion-resistant immersion heaters for electroplating and metal finishing',
       icon: Wrench,
-      image: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/heaters-for-metal-finishing/18.png',
       features: ['Corrosion Resistant', 'Chemical Compatible', 'Precise Control', 'Long Service Life'],
       industries: ['Metals', 'Automotive', 'Electronics', 'Aerospace'],
       specs: ['Multi-Material', 'Chemical Resistant', 'Custom'],
@@ -61,7 +61,7 @@ const ProductsPage = () => {
       title: 'Heater Control Panels',
       description: 'Advanced control systems for precise temperature management and monitoring',
       icon: Settings,
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/heater-control-panel/15.png',
       features: ['Digital Control', 'Remote Monitoring', 'Safety Features', 'Custom Configuration'],
       industries: ['All Industries', 'Process Control', 'Automation', 'Safety'],
       specs: ['Digital', 'Remote', 'Safety'],
@@ -72,7 +72,7 @@ const ProductsPage = () => {
       title: 'Customised Heating Equipment',
       description: 'Engineered-to-order heating solutions for specific process requirements',
       icon: Thermometer,
-      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/customised-heating/1.png',
       features: ['Custom Design', 'Application Specific', 'Engineering Support', 'Turnkey Solutions'],
       industries: ['OEM & EPC', 'New Industries', 'Special Projects', 'R&D'],
       specs: ['Custom', 'Engineered', 'Turnkey'],
@@ -83,7 +83,7 @@ const ProductsPage = () => {
       title: 'Standard & Custom Heating Elements',
       description: 'Comprehensive range of tubular, cartridge, and specialty heating elements',
       icon: Flame,
-      image: 'https://images.unsplash.com/photo-1581092918484-8313bbc2c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/standard-and-custom/22.png',
       features: ['Wide Range', 'Custom Specifications', 'High Quality', 'Fast Delivery'],
       industries: ['Pharmaceuticals', 'Food Processing', 'Chemicals', 'Water Treatment'],
       specs: ['Standard', 'Custom', 'Fast Delivery'],
@@ -205,7 +205,7 @@ const ProductsPage = () => {
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     

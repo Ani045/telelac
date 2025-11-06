@@ -20,6 +20,7 @@ import MetalFinishingTanksPage from '@/pages/MetalFinishingTanksPage';
 import HeaterControlPanelsPage from '@/pages/HeaterControlPanelsPage';
 import CustomisedHeatingEquipmentPage from '@/pages/CustomisedHeatingEquipmentPage';
 import HeatingElementsPage from '@/pages/HeatingElementsPage';
+import IndustryProductsPage from '@/pages/IndustryProductsPage';
 import NotFound from '@/pages/NotFound';
 import './App.css';
 
@@ -45,7 +46,7 @@ function App() {
                 <Route path="/products/heating-elements" element={<HeatingElementsPage />} />
                 <Route path="/products/:productId" element={<ProductDetailPage />} />
                 <Route path="/industries" element={<IndustriesPage />} />
-                <Route path="/industries/:industry/products" element={<ProductsPage />} />
+                <Route path="/industries/:industryId/products" element={<IndustryProductsPage />} />
                 <Route path="/resources" element={<ResourcesPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />

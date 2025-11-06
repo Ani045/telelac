@@ -67,7 +67,7 @@ const HeroSection = () => {
   return (
     <section className="relative bg-[#2B2B2A] text-white overflow-hidden">
       {/* Slider Container */}
-      <div className="relative h-[500px] lg:h-[600px]">
+      <div className="relative h-[600px] sm:h-[650px] lg:h-[600px]">
         {/* Slides */}
         {slides.map((slide, index) => (
           <div
@@ -82,7 +82,8 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url('${slide.image}')` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2B2B2A] via-[#2B2B2A]/95 to-[#2B2B2A]/60" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#2B2B2A]/85 via-[#2B2B2A]/70 to-[#2B2B2A]/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2A]/60 via-transparent to-transparent" />
             </div>
 
             {/* Decorative Elements */}
@@ -90,7 +91,7 @@ const HeroSection = () => {
 
             {/* Content */}
             <div className="relative container mx-auto px-4 h-full flex items-center">
-              <div className="max-w-2xl space-y-6">
+              <div className="max-w-2xl space-y-4 sm:space-y-6 pb-16 sm:pb-12 lg:pb-0">
                 {/* Badge */}
                 <Badge className="bg-[#F0801C]/20 text-[#F0801C] border-[#F0801C]/30 backdrop-blur-sm text-sm px-4 py-2">
                   <slide.badge.icon className="w-4 h-4 mr-2" />
@@ -98,42 +99,42 @@ const HeroSection = () => {
                 </Badge>
 
                 {/* Title */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   {slide.title}
-                  <span className="block text-[#F0801C] mt-2">{slide.highlight}</span>
+                  <span className="block text-[#F0801C] mt-1 sm:mt-2">{slide.highlight}</span>
                 </h1>
 
                 {/* Description */}
-                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
                   {slide.description}
                 </p>
 
                 {/* Stats */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {slide.stats.map((stat, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2"
+                      className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2"
                     >
-                      <stat.icon className="h-5 w-5 text-green-400" />
-                      <span className="text-sm font-medium">{stat.text}</span>
+                      <stat.icon className="h-4 w-4 sm:h-5 sm:w-5 text-green-400" />
+                      <span className="text-xs sm:text-sm font-medium">{stat.text}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#C6601A] text-white px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+                    className="bg-gradient-to-r from-[#F0801C] to-[#D6701A] hover:from-[#D6701A] hover:to-[#C6601A] text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
                   >
                     Get a Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-white/30 text-white hover:bg-white hover:text-[#2B2B2A] px-8 py-6 text-lg backdrop-blur-sm"
+                    className="border-2 border-white/30 text-white hover:bg-white hover:text-[#2B2B2A] px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg backdrop-blur-sm"
                   >
                     View Products
                   </Button>

@@ -1,85 +1,82 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
-import { Factory, Droplets, Fuel, Zap, Building, Cpu, Users, Globe, ArrowRight, ChevronRight, Award, FlaskConical, Flame, Wind, Settings } from 'lucide-react';
+import { Factory, Droplets, Zap, Users, Globe, ArrowRight, ChevronRight, Award, FlaskConical, Wind } from 'lucide-react';
 
 const IndustriesPage = () => {
   const industries = [
     {
-      id: 'chemicals',
-      title: 'Chemicals',
-      description: 'Precision heating solutions for chemical processing and manufacturing applications.',
+      id: 'process-industry',
+      title: 'Process Industry',
+      description: 'Chemicals, Fertilizers, Petrochemicals, Cement',
       icon: FlaskConical,
       image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      id: 'food-processing',
-      title: 'Food Processing',
-      description: 'Food-grade heating solutions with strict hygiene standards.',
-      icon: Factory,
-      image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      products: [
+        'Air Heaters',
+        'Electric Heater Bundles & Inline Process Heaters',
+        'Heater Control Panels',
+        'Customised Heating Equipment'
+      ]
     },
     {
       id: 'industrial-gases',
-      title: 'Industrial Gases',
-      description: 'Specialized heating systems for industrial gas production and handling.',
+      title: 'Industrial Gases / Compressed Air Heating',
+      description: 'Nitrogen, Hydrogen, Oxygen, Air Separation Units, Air Dryers',
       icon: Wind,
       image: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      id: 'metals',
-      title: 'Metals',
-      description: 'Advanced heating solutions for metal processing, forging, and treatment.',
-      icon: Factory,
-      image: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      id: 'new-industries',
-      title: 'New Industries',
-      description: 'Innovative heating technologies for emerging industrial applications.',
-      icon: Settings,
-      image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      id: 'oem-epc',
-      title: 'OEM & EPC',
-      description: 'Custom engineered heating solutions for OEMs and EPC contractors.',
-      icon: Building,
-      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      products: [
+        'Air Heaters',
+        'Heater Bundles / Inline Process Heaters',
+        'Standard & Custom Heating Elements'
+      ]
     },
     {
       id: 'oil-gas',
       title: 'Oil & Gas',
-      description: 'Heavy-duty heating equipment for oil and gas operations.',
+      description: 'Desalination, SWRO, RO‐CIP, ZLD',
       icon: Droplets,
       image: 'https://images.unsplash.com/photo-1613123432717-e1cd14e5e7e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      products: [
+        'Electric Heater Bundles & Inline Process Heaters',
+        'Customised Heating Equipment',
+        'Standard & Custom Heating Elements'
+      ]
     },
     {
-      id: 'petrochemicals',
-      title: 'Petrochemicals',
-      description: 'Specialized heating equipment for petrochemical processing and refining.',
-      icon: Flame,
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      id: 'pharmaceuticals',
-      title: 'Pharmaceuticals',
-      description: 'Clean room compatible heating solutions for pharmaceutical manufacturing.',
-      icon: Cpu,
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      id: 'power',
-      title: 'Power Generation',
-      description: 'Reliable heating systems for power generation and electrical infrastructure.',
-      icon: Zap,
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      id: 'metals-minerals',
+      title: 'Metals & Minerals Refining / Production',
+      description: 'Advanced heating solutions for metal processing, forging, and treatment',
+      icon: Factory,
+      image: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      products: [
+        'Customised Heating Equipment',
+        'Electric Heater Bundles & Inline Process Heaters',
+        'Standard & Custom Heating Elements'
+      ]
     },
     {
       id: 'water-treatment',
       title: 'Water Treatment',
-      description: 'Corrosion-resistant heating solutions for water treatment and purification.',
+      description: 'All metals with some finishing and paint finishing',
       icon: Droplets,
       image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      products: [
+        'Heaters for Metal Finishing Tanks',
+        'Customised Heating Equipment',
+        'Standard & Custom Heating Elements'
+      ]
+    },
+    {
+      id: 'power-generation',
+      title: 'Power Generation',
+      description: 'Nuclear / Solar / Gas / Thermal, ZLD',
+      icon: Zap,
+      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      products: [
+        'Air Heaters',
+        'Electric Heater Bundles & Inline Process Heaters',
+        'Standard & Custom Heating Elements'
+      ]
     }
   ];
 
@@ -187,9 +184,10 @@ const IndustriesPage = () => {
             {/* More Compact Industry Cards Grid - Responsive */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
               {industries.map((industry, index) => (
-                <div 
+                <Link 
                   key={index}
-                  className="group bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                  to={`/industries/${industry.id}/products`}
+                  className="group bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer block"
                 >
                   {/* More Compact Image */}
                   <div className="relative h-24 sm:h-28 lg:h-32 overflow-hidden">
@@ -221,7 +219,7 @@ const IndustriesPage = () => {
                       <ArrowRight className="w-3 h-3 ml-0.5 sm:ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

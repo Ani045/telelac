@@ -67,7 +67,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-4">
             <div className="relative">
               <img
-                src="/public/Logo-1.png"
+                src="/Logo-1.png"
                 alt="Telelec Logo"
                 className="h-10 w-auto object-contain" />
 
@@ -119,7 +119,7 @@ const Header = () => {
               <div className="flex flex-col space-y-6 mt-8">
                 <div className="flex items-center space-x-3 pb-6 border-b">
                   <img
-                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/17785/f831ff45-d4df-4fdd-ba27-d0b19e15d0f5.png"
+                    src="/Logo-1.png"
                     alt="Telelec Logo"
                     className="h-12 w-auto object-contain" />
 
