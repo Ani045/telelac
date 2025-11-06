@@ -6,69 +6,69 @@ const ClientCarousel = () => {
     const clients = [
         {
             name: "Client 1",
-            logo: "/public/clients/1.png",
+            logo: "/clients/1.png",
         },
         {
             name: "Client 2",
-            logo: "/public/clients/2.jpg",
+            logo: "/clients/2.jpg",
         },
         {
             name: "Client 3",
-            logo: "/public/clients/3.png",
+            logo: "/clients/3.png",
         },
         {
             name: "Client 4",
-            logo: "/public/clients/4.png",
+            logo: "/clients/4.png",
         },
         {
             name: "Client 5",
-            logo: "/public/clients/5.png",
+            logo: "/clients/5.png",
         },
         {
             name: "Client 6",
-            logo: "/public/clients/7.png",
+            logo: "/clients/7.png",
         },
         {
             name: "Client 7",
-            logo: "/public/clients/8.png",
+            logo: "/clients/8.png",
         },
         {
             name: "Client 8",
-            logo: "/public/clients/9.jpg",
+            logo: "/clients/9.jpg",
         },
         {
             name: "Client 9",
-            logo: "/public/clients/10.png",
+            logo: "/clients/10.png",
         },
         {
             name: "Client 10",
-            logo: "/public/clients/11.jpg",
+            logo: "/clients/11.jpg",
         },
         {
             name: "Client 11",
-            logo: "/public/clients/12.png",
+            logo: "/clients/12.png",
         },
         {
             name: "Client 12",
-            logo: "/public/clients/13.png",
+            logo: "/clients/13.png",
         },
         {
             name: "Client 14",
-            logo: "/public/clients/14.png",
+            logo: "/clients/14.png",
         },
          {
             name: "Client 15",
-            logo: "/public/clients/15.jpg",
+            logo: "/clients/15.jpg",
         },
  {
             name: "Client 13",
-            logo: "/public/clients/16.png",
+            logo: "/clients/16.png",
         }, {
             name: "Client 1",
-            logo: "/public/clients/17.jpg",
+            logo: "/clients/17.jpg",
         },{
             name: "Client 15",
-            logo: "/public/clients/18.jpg",
+            logo: "/clients/18.jpg",
         }
 
 
